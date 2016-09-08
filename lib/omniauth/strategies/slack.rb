@@ -34,7 +34,7 @@ module OmniAuth
 
         unless skip_info?
           [:first_name, :last_name, :phone].each do |key|
-            hash[key] = user_info['user'].to_h['profile'].to_h[key.to_s]
+            hash[key] = user_info['user'].to_hash['profile'].to_hash[key.to_s]
           end
         end
 
@@ -67,11 +67,11 @@ module OmniAuth
       end
 
       def user_identity
-        @user_identity ||= identity['user'].to_h
+        @user_identity ||= identity['user'].to_hash
       end
 
       def team_identity
-        @team_identity ||= identity['team'].to_h
+        @team_identity ||= identity['team'].to_hash
       end
 
       def user_info
