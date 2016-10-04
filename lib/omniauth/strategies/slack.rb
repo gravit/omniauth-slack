@@ -69,16 +69,16 @@ module OmniAuth
       end
 
       def user_identity
-        @user_identity ||= identity['user'].to_h
+        @user_identity ||= (identity['user'] || {}).to_h
       end
 
       def team_identity
-        @team_identity ||= identity['team'].to_h
+        @team_identity ||= (identity['team'] || {}).to_h
       end
 
       def user_info
         url = URI.parse('/api/users.info')
-        url.query = Rack::Utils.build_query(user: user_identity['id'])
+        url.query = Rack::Utils.build_query(user: user_identity['id'] || access_token.params['user_id'])
         url = url.to_s
 
         @user_info ||= access_token.get(url).parsed
