@@ -189,4 +189,12 @@ end
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kmrshntr/omniauth-slack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# Fork Infomation
+
+This fork contains two lines of development. In `master` we have some
+changes we've made to use this gem after we upgraded our app to Rails 5.1.
+It contains the latest from the
+[orignal gem - kmrshntr/omniauth-slack](https://github.com/kmrshntr/omniauth-slack) as of April 2017.
+
+The `orig-fork` branch is our original fork with some back-porting to Ruby
+1.9.3 and an initial attempt at Rails 5.1 compatibility.
